@@ -8,3 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "modular-navigation"
 include ':app'
+include ':movie-list'
+include ':movie-detail'
+include ':data'
+include ':common-core'

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="modular-navigation.app" target="11" />
+      <module name="modular-navigation.movie-detail" target="11" />
+      <module name="modular-navigation.movie-list" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

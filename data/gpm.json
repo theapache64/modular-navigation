@@ -1,0 +1,32 @@
+{
+ "added": [
+  {
+   "id": 1,
+   "type": "implementation",
+   "installed_name": "javax.inject",
+   "gpm_dep": {
+    "artifact_id": "javax.inject",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/javax.inject/javax.inject",
+    "get_from": "Central",
+    "group_id": "javax.inject",
+    "name": "Javax Inject",
+    "description": "The javax.inject API"
+   }
+  },
+  {
+   "id": 2,
+   "type": "implementation",
+   "installed_name": "coroutines-core",
+   "gpm_dep": {
+    "artifact_id": "kotlinx-coroutines-core",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core",
+    "get_from": "Central",
+    "group_id": "org.jetbrains.kotlinx",
+    "name": "Kotlinx Coroutines Core",
+    "description": "Coroutines support libraries for Kotlin"
+   }
+  }
+ ]
+}

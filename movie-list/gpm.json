@@ -1,0 +1,18 @@
+{
+ "added": [
+  {
+   "id": 1,
+   "type": "implementation",
+   "installed_name": "viewmodel-ktx",
+   "gpm_dep": {
+    "artifact_id": "lifecycle-viewmodel-ktx",
+    "default_type": "implementation",
+    "docs": "https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx",
+    "get_from": "Google",
+    "group_id": "androidx.lifecycle",
+    "name": "Android Lifecycle ViewModel Kotlin Extensions",
+    "description": "Kotlin extensions for 'viewmodel' artifact"
+   }
+  }
+ ]
+}
