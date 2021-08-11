@@ -2,6 +2,7 @@ package com.example.movielist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -25,13 +26,19 @@ fun MovieListScreen(
     viewModel: MovieListViewModel
 ) {
     val movies by viewModel.movies.collectAsState()
-    MovieListUi(movies)
+    MovieListUi(
+        movies = movies,
+        onMovieClicked = {
+            viewModel.onMovieClicked(it)
+        }
+    )
 }
 
 
 @Composable
 private fun MovieListUi(
-    movies: Resource<List<WidgetItem>>
+    movies: Resource<List<WidgetItem>>,
+    onMovieClicked: (WidgetItem) -> Unit
 ) {
     when (movies) {
         is Resource.Loading -> {
@@ -40,7 +47,7 @@ private fun MovieListUi(
             }
         }
         is Resource.Success -> {
-            Movies(movies.data)
+            Movies(movies.data, onMovieClicked)
         }
         is Resource.Error -> TODO()
         is Resource.Idle -> TODO()
@@ -51,12 +58,18 @@ private fun MovieListUi(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Movies(movies: List<WidgetItem>) {
+fun Movies(
+    movies: List<WidgetItem>,
+    onMovieClicked: (WidgetItem) -> Unit
+) {
     LazyVerticalGrid(cells = GridCells.Adaptive(minSize = 128.dp)) {
         items(movies) { movie ->
             Box(
                 modifier = Modifier
                     .height(100.dp)
+                    .clickable {
+                        onMovieClicked(movie)
+                    }
                     .padding(5.dp)
                     .background(Color.Gray),
                 contentAlignment = Alignment.Center

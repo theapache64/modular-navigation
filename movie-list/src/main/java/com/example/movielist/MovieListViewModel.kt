@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.data.MoviesRepo
 import com.example.commoncore.Resource
 import com.example.data.WidgetItem
+import com.example.navigation.NavigationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,8 +14,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MovieListViewModel @Inject constructor(
-    private val moviesRepo: MoviesRepo
+    private val moviesRepo: MoviesRepo,
+    private val navigationManager : NavigationManager
 ) : ViewModel() {
+
+
     private val _movies = MutableStateFlow<Resource<List<WidgetItem>>>(Resource.Idle())
     val movies = _movies.asStateFlow()
 
@@ -23,5 +27,9 @@ class MovieListViewModel @Inject constructor(
             _movies.value = Resource.Loading()
             _movies.value = Resource.Success(moviesRepo.getMovies())
         }
+    }
+
+    fun onMovieClicked(it: WidgetItem) {
+        navigationManager.navigate(it.onClick)
     }
 }

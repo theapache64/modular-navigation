@@ -8,6 +8,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.sp
 import com.example.commoncore.Resource
 
 @Composable
@@ -31,10 +32,12 @@ fun MovieDetailScreen(
                 Text(text = "Loading movie detail")
             }
             is Resource.Success -> {
-                Text(text = "Movie Detail : '${movieDetail.data}'")
+                Text(text = "Movie Detail : '${movieDetail.data}'", fontSize = 25.sp)
             }
             is Resource.Error -> TODO()
-            is Resource.Idle -> TODO()
+            is Resource.Idle -> {
+
+            }
         }
     }
 }

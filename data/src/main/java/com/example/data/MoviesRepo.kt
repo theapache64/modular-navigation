@@ -12,12 +12,17 @@ class MoviesRepo @Inject constructor() {
                     WidgetItem(
                         title = "Movie $it",
                         onClick = Action(
-                            type = "to_page",
-                            uri = "/in/movies/$it"
+                            type = Action.ACTION_TYPE_TO_DETAIL,
+                            dataId = "movieId_$it"
                         )
                     )
                 )
             }
         }
+    }
+
+    suspend fun getDetail(movieId: String): String {
+        delay(2000)
+        return "THE DETAIL FOR MOVIE ID '$movieId'"
     }
 }

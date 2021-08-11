@@ -5,6 +5,7 @@
       <module name="modular-navigation.app" target="11" />
       <module name="modular-navigation.movie-detail" target="11" />
       <module name="modular-navigation.movie-list" target="11" />
+      <module name="modular-navigation.navigation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
